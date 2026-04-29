@@ -16,7 +16,10 @@ Kyushu University
 I am an Assistant Professor at Kyushu University.  
 My research focuses on corporate sustainability, human capital, and sustainable finance.
 
----
+- [Contact](mailto:xiejun0105@gmail.com)
+- [Google Scholar](https://scholar.google.com/citations?user=Xz6_mOAAAAAJ&hl=en)
+- [ORCiD](https://orcid.org/0000-0001-7511-7869)
+- [Research Map](https://researchmap.jp/xiejun)
 
 ## Media & News
 
@@ -40,4 +43,4 @@ My research focuses on corporate sustainability, human capital, and sustainable 
   *Do investors incorporate financial materiality of environmental information in risk evaluation?*  
   [Read more](https://www.eurekalert.org/news-releases/994838)
 
-- [Contact](mailto:xiejun0105@gmail.com)
+
