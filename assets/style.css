@@ -1,31 +1,31 @@
 
 :root {
   --bg: #fbfaf6;
-  --surface: rgba(255, 255, 255, 0.72);
+  --surface: rgba(255, 255, 255, 0.74);
   --surface-solid: #ffffff;
-  --text: #1d242c;
-  --muted: #6d7680;
-  --line: #e6e1d8;
-  --accent: #2b6ea6;
-  --accent-strong: #174d7f;
-  --accent-soft: #eef5fa;
-  --card: rgba(255, 255, 255, 0.82);
-  --shadow: 0 18px 48px rgba(35, 48, 67, 0.08);
+  --text: #20262d;
+  --muted: #68727d;
+  --line: #e6e0d8;
+  --accent: #2d6f9f;
+  --accent-strong: #174e78;
+  --accent-soft: rgba(45, 111, 159, 0.08);
+  --card: rgba(255, 255, 255, 0.86);
+  --shadow: 0 16px 42px rgba(33, 45, 62, 0.075);
   --max: 1120px;
 }
 
 html[data-theme="dark"] {
   --bg: #151719;
-  --surface: rgba(28, 31, 34, 0.78);
+  --surface: rgba(27, 30, 34, 0.82);
   --surface-solid: #1d2024;
-  --text: #eef0f2;
-  --muted: #a9b0b8;
-  --line: #30343a;
-  --accent: #8ab8e8;
-  --accent-strong: #b6d7f5;
-  --accent-soft: rgba(138, 184, 232, 0.12);
-  --card: rgba(29, 32, 36, 0.86);
-  --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  --text: #edf0f2;
+  --muted: #a8b0b8;
+  --line: #31363c;
+  --accent: #91bee8;
+  --accent-strong: #c4ddf6;
+  --accent-soft: rgba(145, 190, 232, 0.13);
+  --card: rgba(29, 32, 36, 0.88);
+  --shadow: 0 16px 42px rgba(0, 0, 0, 0.26);
 }
 
 * {
@@ -39,21 +39,24 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(43, 110, 166, 0.08), transparent 34rem),
+    radial-gradient(circle at top left, rgba(45, 111, 159, 0.07), transparent 32rem),
     var(--bg);
   color: var(--text);
   font-family:
-    "Source Serif 4",
-    "Noto Serif",
-    "Noto Serif CJK SC",
-    "Noto Serif CJK JP",
-    "Hiragino Mincho ProN",
-    "Yu Mincho",
-    "Songti SC",
-    Georgia,
-    "Times New Roman",
-    serif;
-  font-size: 17px;
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "Meiryo",
+    "Microsoft YaHei",
+    "Noto Sans CJK SC",
+    "Noto Sans CJK JP",
+    sans-serif;
+  font-size: 16px;
   line-height: 1.72;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -63,7 +66,7 @@ body {
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
 }
 
 a:hover {
@@ -76,45 +79,54 @@ a:hover {
   padding: 34px 34px 72px;
 }
 
+/* Header */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
-  margin: -34px -34px 48px;
-  padding: 20px 34px 18px;
+  margin: -34px -34px 34px;
+  padding: 16px 34px 14px;
+}
+
+.site-header::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: -16px 0 14px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 46%, var(--line)), transparent);
+  opacity: 0.75;
 }
 
 .motto-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4px 0 18px;
+  padding: 2px 0 14px;
 }
 
 .brand {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
-  color: var(--text);
-  font-size: clamp(21px, 2.4vw, 30px);
+  font-size: clamp(24px, 2.45vw, 32px);
   font-weight: 650;
-  letter-spacing: 0.035em;
-  line-height: 1.2;
+  letter-spacing: 0.045em;
+  line-height: 1.22;
   text-align: center;
+  color: var(--text);
+  background: linear-gradient(90deg, var(--text), var(--accent), var(--text));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@supports (-webkit-background-clip: text) {
+  .brand {
+    color: transparent;
+  }
 }
 
 .brand:hover {
-  color: var(--accent);
+  opacity: 0.84;
   text-decoration: none;
 }
 
@@ -140,40 +152,45 @@ a:hover {
 .utility-nav {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
   flex-wrap: wrap;
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
 }
 
 .main-nav a {
   position: relative;
   color: var(--muted);
-  font-size: 14px;
-  letter-spacing: 0.025em;
+  font-size: 15px;
+  font-weight: 450;
+  letter-spacing: 0.015em;
+  padding: 4px 0 7px;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
   border-radius: 999px;
-  padding: 7px 12px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  transition: width 0.22s ease;
 }
 
 .main-nav a:hover {
   color: var(--accent-strong);
-  background: var(--accent-soft);
   text-decoration: none;
-  transform: translateY(-1px);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
 }
 
 .main-nav a.active {
   color: var(--accent-strong);
-  background: var(--accent-soft);
-  font-weight: 650;
+  font-weight: 560;
 }
 
 .lang-nav {
@@ -182,16 +199,6 @@ a:hover {
 
 .lang-nav a,
 .theme-toggle {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
   font-size: 12px;
   line-height: 1;
   color: var(--muted);
@@ -214,7 +221,7 @@ a:hover {
   color: var(--accent-strong);
   border-color: color-mix(in srgb, var(--accent) 48%, var(--line));
   background: var(--accent-soft);
-  font-weight: 650;
+  font-weight: 560;
 }
 
 .theme-toggle {
@@ -234,94 +241,98 @@ html[data-theme="dark"] .theme-toggle .sun {
   display: inline;
 }
 
+/* Home */
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(300px, 0.98fr);
-  gap: 58px;
+  position: relative;
+  min-height: 430px;
+  display: flex;
   align-items: center;
-  margin: 52px 0 58px;
+  margin: 28px 0 48px;
+  padding: 18px 0 28px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 51%;
+  width: 52%;
+  height: 78%;
+  transform: translateY(-50%);
+  background:
+    linear-gradient(to right, var(--bg) 0%, color-mix(in srgb, var(--bg) 78%, transparent) 26%, transparent 70%),
+    url("/images/wordcloud_paper.png") no-repeat center right;
+  background-size: contain;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+html[data-theme="dark"] .hero::before {
+  opacity: 0.24;
+  filter: saturate(0.85) brightness(0.92);
+}
+
+.hero > div:first-child {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
 }
 
 .kicker {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
   color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 0.09em;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: 13px;
+  margin-bottom: 11px;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 h1,
 h2,
 h3 {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
-  line-height: 1.25;
+  line-height: 1.28;
   color: var(--text);
 }
 
 h1 {
-  font-size: clamp(36px, 4.2vw, 54px);
-  font-weight: 680;
+  font-size: clamp(29px, 2.75vw, 38px);
+  font-weight: 600;
   margin: 0 0 8px;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.028em;
 }
 
 .subtitle {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
   color: var(--muted);
-  font-size: 17px;
-  margin-bottom: 29px;
+  font-size: 15.5px;
+  margin-bottom: 18px;
 }
 
 .lead {
-  font-size: 18px;
+  font-size: 16.3px;
   color: var(--text);
-  margin: 0 0 17px;
-  max-width: 650px;
+  margin: 0 0 13px;
+  max-width: 585px;
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  margin-top: 13px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 999px;
+  opacity: 0.75;
 }
 
 .profile-links {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 26px;
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
+  margin-top: 22px;
 }
 
 .profile-links a {
@@ -340,39 +351,34 @@ h1 {
 }
 
 .hero-image {
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: var(--card);
-  box-shadow: var(--shadow);
-  padding: 24px;
+  display: none;
 }
 
 .hero-image img {
-  width: 100%;
-  max-width: 520px;
-  display: block;
-  margin: 0 auto;
+  display: none;
 }
 
 .section {
-  margin-top: 62px;
+  margin-top: 48px;
 }
 
 .section-title {
-  font-size: 24px;
-  font-weight: 650;
+  font-size: 21px;
+  font-weight: 590;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 11px;
-  margin: 0 0 24px;
-  letter-spacing: -0.015em;
+  padding-bottom: 10px;
+  margin: 0 0 22px;
+  letter-spacing: -0.012em;
 }
 
 .section-intro {
   color: var(--muted);
-  margin-top: -10px;
-  margin-bottom: 24px;
+  margin-top: -8px;
+  margin-bottom: 22px;
+  font-size: 15px;
 }
 
+/* Reports */
 .reports-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -382,20 +388,20 @@ h1 {
 
 .report-card {
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 17px;
   background: var(--card);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  box-shadow: 0 10px 30px rgba(35, 48, 67, 0.045);
+  box-shadow: 0 10px 30px rgba(35, 48, 67, 0.042);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .report-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
-  border-color: color-mix(in srgb, var(--accent) 36%, var(--line));
+  border-color: color-mix(in srgb, var(--accent) 34%, var(--line));
   text-decoration: none;
 }
 
@@ -403,8 +409,8 @@ h1 {
   height: 270px;
   padding: 18px;
   background:
-    linear-gradient(135deg, rgba(43, 110, 166, 0.08), transparent),
-    color-mix(in srgb, var(--surface-solid) 80%, var(--bg));
+    linear-gradient(135deg, rgba(45, 111, 159, 0.07), transparent),
+    color-mix(in srgb, var(--surface-solid) 82%, var(--bg));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -415,7 +421,7 @@ h1 {
   max-height: 100%;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.10));
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.10));
 }
 
 .report-body {
@@ -424,39 +430,20 @@ h1 {
 
 .report-title {
   display: block;
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
-  font-size: 14px;
-  font-weight: 650;
+  font-size: 13.5px;
+  font-weight: 600;
   color: var(--text);
-  line-height: 1.35;
+  line-height: 1.38;
   margin-bottom: 6px;
 }
 
 .report-link {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--muted);
   letter-spacing: 0.01em;
 }
 
+/* News */
 .news-list {
   display: grid;
   gap: 18px;
@@ -468,16 +455,6 @@ h1 {
 }
 
 .news-date {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
   font-size: 13px;
   color: var(--muted);
   margin-bottom: 2px;
@@ -488,39 +465,36 @@ h1 {
 }
 
 .news-item a {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
   font-size: 13px;
 }
 
+/* Interior pages */
 .page-title {
-  margin-top: 6px;
+  margin-top: 4px;
   margin-bottom: 8px;
+  font-size: clamp(25px, 2.2vw, 31px);
+  font-weight: 590;
+  letter-spacing: -0.018em;
 }
 
 .page-description {
   color: var(--muted);
-  margin-bottom: 34px;
+  margin-bottom: 30px;
   max-width: 760px;
+  font-size: 14.5px;
 }
 
 .year-block {
-  margin-top: 36px;
+  margin-top: 28px;
 }
 
 .year-heading {
-  font-size: 22px;
+  font-size: 18px;
+  font-weight: 590;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 8px;
-  margin-bottom: 18px;
+  padding-bottom: 7px;
+  margin-bottom: 16px;
+  color: var(--accent-strong);
 }
 
 .pub-list,
@@ -531,13 +505,13 @@ h1 {
 }
 
 .pub-item {
-  padding: 0 0 18px 0;
-  margin-bottom: 18px;
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 65%, transparent);
+  padding: 0 0 15px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
 }
 
 .pub-title {
-  font-weight: 650;
+  font-weight: 590;
 }
 
 .pub-meta {
@@ -545,50 +519,31 @@ h1 {
 }
 
 .pub-doi {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
   font-size: 13px;
   margin-top: 4px;
   overflow-wrap: anywhere;
 }
 
 .category-heading {
-  font-size: 24px;
-  margin-top: 46px;
+  font-size: 20px;
+  font-weight: 590;
+  margin-top: 38px;
   border-bottom: 1px solid var(--line);
   padding-bottom: 8px;
 }
 
 .course-card {
   border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 20px;
+  border-radius: 15px;
+  padding: 18px 20px;
   background: var(--card);
-  margin-bottom: 34px;
-  box-shadow: 0 10px 30px rgba(35, 48, 67, 0.045);
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(35, 48, 67, 0.035);
 }
 
 .course-title {
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
-  font-size: 18px;
-  font-weight: 650;
+  font-size: 17px;
+  font-weight: 590;
 }
 
 .course-meta {
@@ -605,16 +560,6 @@ h1 {
   margin-top: 72px;
   padding-top: 18px;
   color: var(--muted);
-  font-family:
-    "Avenir Next",
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK JP",
-    "Hiragino Sans",
-    "Microsoft YaHei",
-    sans-serif;
   font-size: 13px;
 }
 
@@ -634,8 +579,17 @@ h1 {
   }
 
   .hero {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    min-height: auto;
+    padding: 18px 0 28px;
+    margin-top: 20px;
+  }
+
+  .hero::before {
+    right: -18%;
+    width: 90%;
+    height: 62%;
+    top: 52%;
+    opacity: 0.12;
   }
 
   .reports-grid {
@@ -658,14 +612,33 @@ h1 {
   }
 
   .brand {
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .main-nav {
-    gap: 6px;
+    gap: 14px;
+  }
+
+  .kicker {
+    white-space: normal;
+  }
+
+  .hero::before {
+    display: none;
   }
 
   body {
-    font-size: 16px;
+    font-size: 15.5px;
+  }
+}
+
+
+main {
+  max-width: 940px;
+}
+
+@media (min-width: 901px) {
+  main {
+    margin-left: 0;
   }
 }
