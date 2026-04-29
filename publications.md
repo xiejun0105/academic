@@ -10,19 +10,6 @@ permalink: /publications/
 </div>
 
 ## Journal Articles
----
-layout: default
-title: Publications
-permalink: /publications/
----
-
-# Publications
-
-[Home](/) | [Publications](/publications/) | [Teaching](/teaching/)
-
----
-
-## Journal Articles
 
 - Wang, X., Xie, J., Fujii, H., Keeley, A. R., & Managi, S. (2026). *Environmental, Social, and Governance (ESG) Performance and Equity Misvaluation: The Moderating Role of Country-Level Factors*. Corporate Social Responsibility and Environmental Management.  
   [https://doi.org/10.1002/csr.70441](https://doi.org/10.1002/csr.70441)
