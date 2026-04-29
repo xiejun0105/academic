@@ -1,17 +1,24 @@
 # Jun Xie Academic Website
 
-Files for GitHub Pages.
+Copy these files and folders into the root of your GitHub Pages repository.
 
-Upload or keep these image files in the repository:
+Required image files already in your repository:
 
 - images/wordcloud_paper.png
 - images/ADB_wp_2024.png
 - images/education_UNESCO.png
 - images/iw_report_2024.png
 
-Main files:
+Pages:
 
-- index.html
-- publications/index.html
-- teaching/index.html
-- assets/style.css
+- /
+- /publications/
+- /teaching/
+- /ja/
+- /ja/publications/
+- /ja/teaching/
+- /zh/
+- /zh/publications/
+- /zh/teaching/
+
+Note: this version uses static HTML. `_config.yml` will not control the visible site title on these pages.
