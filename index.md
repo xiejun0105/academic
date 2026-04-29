@@ -16,4 +16,28 @@ Kyushu University
 I am an Assistant Professor at Kyushu University.  
 My research focuses on corporate sustainability, human capital, and sustainable finance.
 
+---
+
+## Media & News
+
+- **8 Jan 2026**  
+  *Doing good pays off: Environmentally and socially responsible companies drive value and market efficiency*  
+  [Read more](https://www.eurekalert.org/news-releases/1111140)
+
+- **10 Dec 2024**  
+  *Better environmental performance boosts profits and cuts costs*  
+  [Read more](https://www.eurekalert.org/news-releases/1067513)
+
+- **31 Oct 2024**  
+  *Press release of cooperating research (Japanese)*  
+  [Read more](https://www.peacemind.co.jp/newsrelease/archives/category/paper)
+
+- **8 Jul 2024**  
+  *Companies that mitigate climate change reduce their cost of capital*  
+  [Read more](https://phys.org/news/2024-07-companies-mitigate-climate-capital.html)
+
+- **7 Jul 2023**  
+  *Do investors incorporate financial materiality of environmental information in risk evaluation?*  
+  [Read more](https://www.eurekalert.org/news-releases/994838)
+
 - [Contact](mailto:xiejun0105@gmail.com)
