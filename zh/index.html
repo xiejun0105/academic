@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <title>Jun Xie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/theme.js"></script>
 </head>
 <body>
   <div class="container">
     
 <header class="site-header">
   <div class="motto-row">
-    <a class="brand" href="/zh/">Do well by doing good</a>
+    <a class="brand" href="index.html">Do well by doing good</a>
   </div>
-  <div class="control-row">
-    <div class="left-controls">
-      <a class="pill " href="/">EN</a>
-      <a class="pill " href="/ja/">日本語</a>
-      <a class="pill active" href="/zh/">中文</a>
-      <button class="pill theme-toggle" type="button" data-theme-toggle>
-        <span class="icon">☾</span><span class="theme-label">Dark</span>
+  <div class="nav-row">
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="index.html">首页</a>
+      <a class="" href="../zh/publications/index.html">发表成果</a>
+      <a class="" href="../zh/teaching/index.html">教学与指导</a>
+    </nav>
+    <div></div>
+    <div class="utility-nav">
+      <nav class="lang-nav" aria-label="Language switcher">
+        <a class="" href="../index.html">EN</a>
+        <a class="" href="../ja/index.html">日本語</a>
+        <a class="active" href="../zh/index.html">中文</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle>
+        <span class="moon">☾</span><span class="sun">☼</span>
       </button>
     </div>
-    <nav class="main-nav">
-      <a class="pill active" href="/zh/">首页</a>
-      <a class="pill " href="/zh/publications/">发表成果</a>
-      <a class="pill " href="/zh/teaching/">教学与指导</a>
-    </nav>
   </div>
 </header>
     
@@ -70,6 +74,5 @@
 
     <footer class="footer">© Jun Xie</footer>
   </div>
-  <script src="../assets/script.js"></script>
 </body>
 </html>
