@@ -395,3 +395,16 @@ html[data-theme="dark"] .hero::before { opacity: .24; filter: saturate(.85) brig
   body { font-size: 15.5px; }
 }
 
+.nav-item:hover .dropdown,
+
+.nav-item.open .dropdown {
+
+  display: block;
+
+}
+
+.nav-trigger {
+
+  cursor: pointer;
+
+}

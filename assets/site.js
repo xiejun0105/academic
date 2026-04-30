@@ -38,5 +38,26 @@
       }, { rootMargin: "-20% 0px -65% 0px", threshold: 0.01 });
       sections.forEach(section => observer.observe(section));
     }
+        document.querySelectorAll(".nav-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        const item = trigger.closest(".nav-item");
+        if (!item || !item.querySelector(".dropdown")) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        document.querySelectorAll(".nav-item.open").forEach((openItem) => {
+          if (openItem !== item) openItem.classList.remove("open");
+        });
+
+        item.classList.toggle("open");
+      });
+    });
+
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".nav-item.open").forEach((item) => {
+        item.classList.remove("open");
+      });
+    });
   });
 })();
