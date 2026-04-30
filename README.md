@@ -1,22 +1,28 @@
-# Jun Xie Academic Website v12 Complete
+# Jun Xie HTML Full Polished Version
 
-This package contains the complete static website.
+This is the complete static HTML version.
 
-Main updates:
-- Publications dropdown: Journal / MISC
-- Journal page has year timeline
-- MISC page lists reports, preprints, and working papers without timeline
-- Teaching dropdown: Supervision / Course
-- Supervision page has year timeline
-- Course page is simple
-- Conference page has year timeline
-- Blog page is prepared with tag/year structure
-- JSPS KAKENHI URL added to homepage funding card
-  - EN / ZH pages link to English KAKEN page
-  - JA page links to Japanese KAKEN page
+Contains:
+- Full homepage with hero, reports, funding, and media
+- Full Journal Publications page with timeline
+- Full MISC page separated into Book Chapters & Reports / Preprints / Working Papers
+- Full Teaching Supervision page with timeline
+- Course page
+- Full Conference page with timeline
+- Blog placeholder with tags
+- EN / Japanese / Chinese versions
+- Theme toggle
+- Dropdown navigation
+- Polished header motto with 义利并举 / 三方よし
 
-Required existing image files in repository:
-- images/wordcloud_paper.png
-- images/ADB_wp_2024.png
-- images/education_UNESCO.png
-- images/iw_report_2024.png
+Required existing images:
+- /images/wordcloud_paper.png
+- /images/iw_report_2024.png
+- /images/education_UNESCO.png
+- /images/ADB_wp_2024.png
+
+
+Update v2: Header subtitle width now exactly follows the English motto width; Chinese aligns left and Japanese aligns right within the same boundary.
+
+
+Update v3: Motto subtitle spacing adjusted: smaller type, narrower subtitle track, and softer opacity for better visual balance.
