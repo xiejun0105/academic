@@ -38,7 +38,8 @@
       }, { rootMargin: "-20% 0px -65% 0px", threshold: 0.01 });
       sections.forEach(section => observer.observe(section));
     }
-        document.querySelectorAll(".nav-trigger").forEach((trigger) => {
+    // Mobile-friendly dropdown menu
+    document.querySelectorAll(".nav-trigger").forEach((trigger) => {
       trigger.addEventListener("click", (event) => {
         const item = trigger.closest(".nav-item");
         if (!item || !item.querySelector(".dropdown")) return;
@@ -46,18 +47,24 @@
         event.preventDefault();
         event.stopPropagation();
 
+        const isOpen = item.classList.contains("open");
+
         document.querySelectorAll(".nav-item.open").forEach((openItem) => {
-          if (openItem !== item) openItem.classList.remove("open");
+          openItem.classList.remove("open");
         });
 
-        item.classList.toggle("open");
+        if (!isOpen) {
+          item.classList.add("open");
+        }
       });
     });
 
-    document.addEventListener("click", () => {
-      document.querySelectorAll(".nav-item.open").forEach((item) => {
-        item.classList.remove("open");
-      });
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".nav-item")) {
+        document.querySelectorAll(".nav-item.open").forEach((item) => {
+          item.classList.remove("open");
+        });
+      }
     });
   });
 })();

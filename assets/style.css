@@ -395,16 +395,64 @@ html[data-theme="dark"] .hero::before { opacity: .24; filter: saturate(.85) brig
   body { font-size: 15.5px; }
 }
 
-.nav-item:hover .dropdown,
-
-.nav-item.open .dropdown {
-
-  display: block;
-
+/* Better dropdown behavior */
+.dropdown {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
 }
 
-.nav-trigger {
+.nav-item:hover .dropdown,
+.nav-item.open .dropdown {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
-  cursor: pointer;
+/* Mobile: inline submenu, not floating */
+@media (max-width: 900px) {
+  .main-nav {
+    align-items: flex-start;
+  }
 
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-trigger {
+    display: inline-block;
+  }
+
+  .dropdown {
+    position: static;
+    display: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 6px 0 2px 14px;
+    margin-top: 4px;
+  }
+
+  .nav-item.open .dropdown {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-item:hover .dropdown {
+    display: none;
+  }
+
+  .dropdown a {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 10px;
+    background: var(--surface);
+    font-size: 13px;
+  }
 }
