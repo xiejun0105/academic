@@ -38,33 +38,5 @@
       }, { rootMargin: "-20% 0px -65% 0px", threshold: 0.01 });
       sections.forEach(section => observer.observe(section));
     }
-    // Mobile-friendly dropdown menu
-    document.querySelectorAll(".nav-trigger").forEach((trigger) => {
-      trigger.addEventListener("click", (event) => {
-        const item = trigger.closest(".nav-item");
-        if (!item || !item.querySelector(".dropdown")) return;
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        const isOpen = item.classList.contains("open");
-
-        document.querySelectorAll(".nav-item.open").forEach((openItem) => {
-          openItem.classList.remove("open");
-        });
-
-        if (!isOpen) {
-          item.classList.add("open");
-        }
-      });
-    });
-
-    document.addEventListener("click", (event) => {
-      if (!event.target.closest(".nav-item")) {
-        document.querySelectorAll(".nav-item.open").forEach((item) => {
-          item.classList.remove("open");
-        });
-      }
-    });
   });
 })();

@@ -38,6 +38,7 @@ body {
   font-size: 16px;
   line-height: 1.72;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   transition: background .25s ease, color .25s ease;
 }
@@ -209,7 +210,15 @@ html[data-theme="dark"] .theme-toggle .moon { display: none; }
 html[data-theme="dark"] .theme-toggle .sun { display: inline; }
 
 /* General */
-h1,h2,h3 { line-height: 1.28; color: var(--text); }
+h1,h2,h3 { 
+  font-family:
+    "PingFang SC",
+    "Microsoft YaHei",
+    "Noto Sans CJK SC",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  line-height: 1.28; color: var(--text); }
 h1 { font-size: clamp(29px, 2.75vw, 38px); font-weight: 600; margin: 0 0 8px; letter-spacing: -.028em; }
 h2 { font-size: 21px; font-weight: 590; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
 p { margin-top: 0; }
@@ -395,64 +404,3 @@ html[data-theme="dark"] .hero::before { opacity: .24; filter: saturate(.85) brig
   body { font-size: 15.5px; }
 }
 
-/* Better dropdown behavior */
-.dropdown {
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-  transition: opacity .18s ease, transform .18s ease;
-}
-
-.nav-item:hover .dropdown,
-.nav-item.open .dropdown {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* Mobile: inline submenu, not floating */
-@media (max-width: 900px) {
-  .main-nav {
-    align-items: flex-start;
-  }
-
-  .nav-item {
-    width: 100%;
-  }
-
-  .nav-trigger {
-    display: inline-block;
-  }
-
-  .dropdown {
-    position: static;
-    display: none;
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-    padding: 6px 0 2px 14px;
-    margin-top: 4px;
-  }
-
-  .nav-item.open .dropdown {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .nav-item:hover .dropdown {
-    display: none;
-  }
-
-  .dropdown a {
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 5px 10px;
-    background: var(--surface);
-    font-size: 13px;
-  }
-}
