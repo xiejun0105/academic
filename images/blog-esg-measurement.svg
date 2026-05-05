@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">ESG measurement abstract cover</title>
+  <desc id="desc">Abstract dashboard for measurement and materiality.</desc>
+  <rect width="1200" height="720" fill="#f6f7f9"/>
+  <rect x="150" y="115" width="900" height="490" rx="34" fill="#ffffff" stroke="#d7dee5" stroke-width="4"/>
+  <g fill="#2d6f9f" opacity=".14">
+    <rect x="205" y="175" width="260" height="90" rx="18"/>
+    <rect x="500" y="175" width="220" height="90" rx="18"/>
+    <rect x="755" y="175" width="240" height="90" rx="18"/>
+  </g>
+  <g fill="none" stroke="#2d6f9f" stroke-width="8" stroke-linecap="round">
+    <path d="M230 455 L350 370 L475 410 L610 315 L750 365 L935 260"/>
+    <path d="M230 520 H930" opacity=".22"/>
+    <path d="M230 325 H930" opacity=".22"/>
+  </g>
+  <g fill="#174e78">
+    <circle cx="350" cy="370" r="14"/>
+    <circle cx="610" cy="315" r="14"/>
+    <circle cx="935" cy="260" r="14"/>
+  </g>
+  <g fill="#174e78" opacity=".76">
+    <rect x="230" y="560" width="120" height="18" rx="9"/>
+    <rect x="380" y="560" width="210" height="18" rx="9"/>
+    <rect x="620" y="560" width="150" height="18" rx="9"/>
+  </g>
+</svg>

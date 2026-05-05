@@ -5,6 +5,7 @@
   <title>Jun Xie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css">
+  <script src="/assets/blog-data.js"></script>
   <script src="assets/site.js"></script>
 </head>
 <body>
@@ -60,26 +61,12 @@
         <div class="kicker">Featured Research</div>
       </div>
       <div class="blog-carousel-controls">
-        <button class="carousel-btn" type="button" data-blog-prev aria-label="Previous featured research">&larr;</button>
-        <button class="carousel-btn" type="button" data-blog-next aria-label="Next featured research">&rarr;</button>
+        <button class="carousel-btn" type="button" data-featured-blog-prev aria-label="Previous featured blog">&larr;</button>
+        <button class="carousel-btn" type="button" data-featured-blog-next aria-label="Next featured blog">&rarr;</button>
       </div>
     </div>
-    <div class="blog-carousel" data-blog-carousel aria-live="polite">
-      <article class="featured-blog-card featured-placeholder" data-blog-slide>
-        <div class="blog-card-meta">Coming soon</div>
-      </article>
-      <article class="featured-blog-card featured-placeholder" data-blog-slide>
-        <div class="blog-card-meta">Coming soon</div>
-      </article>
-      <article class="featured-blog-card featured-placeholder" data-blog-slide>
-        <div class="blog-card-meta">Coming soon</div>
-      </article>
-    </div>
-    <div class="carousel-dots" aria-label="Featured research pagination">
-      <button type="button" data-blog-dot aria-label="Show featured research 1"></button>
-      <button type="button" data-blog-dot aria-label="Show featured research 2"></button>
-      <button type="button" data-blog-dot aria-label="Show featured research 3"></button>
-    </div>
+    <div class="featured-blog-carousel" data-featured-blog-carousel aria-live="polite"></div>
+    <div class="carousel-dots" data-featured-blog-dots aria-label="Featured blog pagination"></div>
   </div>
 
   <aside class="profile-panel" aria-label="Profile">
