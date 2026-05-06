@@ -36,7 +36,7 @@
       title: "Beyond the Firm: How Macro-Sustainability and Inclusive Wealth Drive ESG Returns",
       featuredTitle: "Beyond the Firm",
       tag: "Macro Sustainability & Inclusive Wealth",
-      tags: ["ESG", "Inclusive Wealth", "Macro Sustainability"],
+      tags: ["ESG", "Inclusive Wealth", "Macro Sustainability", "Cities"],
       featured: true,
       status: "Essay",
       href: "/blog/macro-sustainability-inclusive-wealth/",
